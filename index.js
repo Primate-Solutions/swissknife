@@ -17,11 +17,12 @@ program
 
     // Use the tab space character for separating columns.
     const separator = "\t";
-    console.log("Locator" + separator + "Text") // header row
+    const rows = ["Locator" + separator + "Text"]; // header row
     for (const locator of locators) {
       const text = await page.locator(locator).first().innerText();
-      console.log(locator + separator + text);
+      rows.push(locator + separator + text);
     }
+    console.log(rows.join("\n"));
 
     await browser.close();
   });
