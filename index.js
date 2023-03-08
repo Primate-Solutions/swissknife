@@ -5,7 +5,7 @@ program
   .argument("<url>")
   .argument("<locators...>")
   .action(async (url, locators) => {
-    // Playwright setup
+    // Playwright setup.
     const browser = await chromium.launch();
     const context = await browser.newContext(devices['Desktop Chrome']);
     const page = await context.newPage();
@@ -32,7 +32,8 @@ given Playwright locator and return their text values in CSV format.`);
 program.addHelpText('after', `\
 
 Example:
-  $ swissknife https://news.ycombinator.com title`);
+  $ swissknife https://news.ycombinator.com title
 
+Learn about Playwright locators: https://playwright.dev/docs/other-locators`);
 
 program.parse();
